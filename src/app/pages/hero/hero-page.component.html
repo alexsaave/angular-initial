@@ -1,0 +1,34 @@
+<h1>{{ name() }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name().toString().toUpperCase() }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ age() }}</dd>
+
+  <td>Método:</td>
+  <dd>{{ heroeDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <!-- ! Intentar  -->
+  <dd>{{ name() | uppercase}}</dd>
+</dl>
+
+<button (click)="changeHero()" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<table>
+  <tbody>
+  <tr>
+    <th scope="row">{{ name() }}</th>
+    <td>{{ age() }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<button class="btn btn-primary" (click)="changeAge()">Cambiar edad</button>
+
+<button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>
