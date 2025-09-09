@@ -1,0 +1,14 @@
+<h3>{{title()}}</h3>
+<ol>
+  @for (character of characters(); track character.id) {
+    @if (character.power > 500) {
+      <li>
+        <span>{{ character.name }}</span>
+        <strong [class.text-danger]="character.power> 9000" [class.text-primary]="character.power<9000">
+          ({{ character.power }})</strong>
+      </li>
+    } @else {
+      <li>ESTE ES BAJITO DE 500</li>
+    }
+  }
+</ol>

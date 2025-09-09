@@ -1,4 +1,8 @@
-import {Component, signal} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {CharacterList} from '../../components/dragon-ball/character-list/character-list';
+import {DragonballCharacterAdd} from '../../components/dragon-ball/dragonball-character-add/dragonball-character-add';
+import {DragonballService} from '../../services/dragonball';
 
 interface Character {
   id: number,
@@ -7,13 +11,13 @@ interface Character {
 }
 
 @Component({
-    templateUrl: './dragon-page,component.html',
+  imports: [
+    CharacterList,
+    DragonballCharacterAdd
+  ],
+    templateUrl: './dragon-page,component.html'
   }
 )
 export class DragonPageComponent {
-  characters = signal<Character[]>([
-    {id: 1, name: "Goku", power: 9001},
-    {id: 2, name: 'Veggeta', power: 4000},
-    {id: 3, name: 'Piccolo', power: 3500}
-  ])
+  public dragonBallService = inject(DragonballService);
 }
